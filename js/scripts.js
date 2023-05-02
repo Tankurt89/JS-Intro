@@ -3,3 +3,4 @@ let pokemonList=[
     {name: 'Umbreon', height: '1m', type: 'Dark'},
     {name: 'Gengar', height: '1.5m', type: 'Ghost, Poison'}
 ]
+console.log(pokemonList)
