@@ -1,13 +1,16 @@
 let pokemonList=[
-    {name: "Turtwig", height: "(Height: 0.4)", type:"[Grass]"},
-    {name: "Umbreon", height: "(Height: 1)", type: "[Dark]"},
-    {name: "Gengar", height: "(Height: 1.5)", type: "[Ghost, Poison]"},
-]
-let text="";
-let i=0; i < pokemonList.length;
-for (;pokemonList[i];){
-    text = text + " " + pokemonList[i].name + " " + pokemonList[i].height + " " + pokemonList[i].type + "<br>";
-    i++;
-}   
-console.log(text);
-document.write(text)
+    {name: "Turtwig", height: 0.4, type:["Grass"]},
+    {name: "Umbreon", height: 1, type: ["Dark"]},
+    {name: "Gengar", height: 1.5, type: ["Ghost", "Poison"]}
+];
+for (let i=0; i <pokemonList.length; i++){
+    //using to assignn any Pokemon larger than 1 the Wow, that is big text.
+    if (pokemonList[i].height > 1){
+        document.write(pokemonList[i].name + " " + "(Height: " + pokemonList[i].height + ") - Wow, that is big! <br>")
+    }
+    else{
+        document.write(pokemonList[i].name + " " + "(Height: " + pokemonList[i].height + ") <br>");
+    }
+}
+console.log(pokemonList);
+
