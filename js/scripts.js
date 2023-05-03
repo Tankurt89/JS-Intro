@@ -1,6 +1,13 @@
 let pokemonList=[
-    {name: 'Turtwig', height: '0.4m', type:'Grass'},
-    {name: 'Umbreon', height: '1m', type: 'Dark'},
-    {name: 'Gengar', height: '1.5m', type: 'Ghost, Poison'}
+    {name: "Turtwig", height: "(Height: 0.4)", type:"[Grass]"},
+    {name: "Umbreon", height: "(Height: 1)", type: "[Dark]"},
+    {name: "Gengar", height: "(Height: 1.5)", type: "[Ghost, Poison]"},
 ]
-console.log(pokemonList)
+let text="";
+let i=0; i < pokemonList.length;
+for (;pokemonList[i];){
+    text = text + " " + pokemonList[i].name + " " + pokemonList[i].height + " " + pokemonList[i].type + "<br>";
+    i++;
+}   
+console.log(text);
+document.write(text)
