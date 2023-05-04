@@ -19,4 +19,3 @@ pokemonRepository.add({ name: "Pikachu"});
 pokemonRepository.getAll().forEach(function (pokemon){
     console.log(pokemon)
 });
-console.log(pokemonRepository.getAll());
