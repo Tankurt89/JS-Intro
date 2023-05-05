@@ -4,15 +4,15 @@ let pokemonRepository = (function(){
         {name: "Umbreon", height: 1, type: ["Dark"]},
         {name: "Gengar", height: 1.5, type: ["Ghost", "Poison"]}
     ];
-        function add(pokemon){
-            pokemonList.push(pokemon);
-        }
-        function getAll(){
+    function add(pokemon){
+        pokemonList.push(pokemon);
+    }
+    function getAll(){
         return pokemonList;
-        }
-        return{
-            add: add,
-            getAll:  getAll
+    }
+    return{
+        add: add,
+        getAll:  getAll
     };
 })();
 pokemonRepository.add({ name: "Pikachu"});
