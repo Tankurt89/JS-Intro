@@ -16,17 +16,23 @@ let pokemonRepository = (function(){
     //Following modifies pokemon repository and turns the array into interacable buttons. While also modifying how they look through the css file.
     function addListItem(pokemon){
         let pokemons = document.querySelector('.pokemon-list');
+        //added two elements so styles.css has a reference point and can edit the looks
         let listPokemon = document.createElement('ul');
         let button = document.createElement('button');
+        //added innerText to display correct information on the button
         button.innerText = pokemon.name, pokemon;
         button.classList.add('button-class');
-        button.value = pokemon.name;
+        //add button to list and pokemons to .pokemon-list
         listPokemon.appendChild(button);
         pokemons.appendChild(listPokemon);
+        addListener(button, pokemon)
+    }
+    //added function to be called when needed in other functions
+    function addListener(button, pokemon){
         button.addEventListener('click', function(event){
             showDetails(pokemon.name)
-        });
-    }
+        })
+    };
     return{
         add: add,
         getAll:  getAll,
