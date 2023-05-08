@@ -31,8 +31,8 @@ let pokemonRepository = (function(){
             json.results.forEach(function (item){
             let pokemon={
                 name: item.name,
-                detailsUrl: item.url
-            };
+                detailsUrl: item.url,               
+               };
             add(pokemon);
         });
         })
@@ -50,12 +50,14 @@ let pokemonRepository = (function(){
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
+                for (i = 0; i < types.length; i++) {
+                    types.name.forEach();
+                }                     
         })
         .catch(function (e){
             console.error(e);
         });
     }
-
     //added function to be called when needed in other functions
     function addListener(button, pokemon){
         button.addEventListener('click', function(event){
