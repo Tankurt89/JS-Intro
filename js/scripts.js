@@ -49,10 +49,12 @@ let pokemonRepository = (function(){
         .then(function(details){
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
-            item.types = details.types;
-                for (i = 0; i < types.length; i++) {
-                    types.name.forEach();
-                }                     
+            // used to display the item types and item type url
+            item.types=[]
+            for(i = 0; i < details.types.length; i++){
+                // keeps from creating an extra undefined array
+                item.types[details.types[i].slot-1]=details.types[i].type;
+            }               
         })
         .catch(function (e){
             console.error(e);
