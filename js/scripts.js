@@ -3,7 +3,15 @@ let pokemonRepository = (function(){
     //url for the pokemon api where information will be pulled from
     let apiUrl= 'https://pokeapi.co/api/v2/pokemon/?limit=150';
     function add(pokemon){
-        pokemonList.push(pokemon);
+        if (
+            typeof pokemon === "object" &&
+            "name" in pokemon
+        ){
+            pokemonList.push(pokemon);
+        }else{
+            console.log("pokemon is not correct")
+        }
+        // pokemonList.push(pokemon);
     }
     function getAll(){
         return pokemonList;
@@ -24,6 +32,7 @@ let pokemonRepository = (function(){
     }
     //function added to fetch the api and what information to pull
     function loadList(){
+        showLoadingMessage('Your Pokeomon will be displayed shortly.')
         return fetch(apiUrl).then(function (response){
             return response.json();
         })
@@ -34,10 +43,12 @@ let pokemonRepository = (function(){
                 detailsUrl: item.url,               
                };
             add(pokemon);
+            hideLoadingMessage();
         });
         })
         .catch(function(e){
             console.error(e);
+            hideLoadingMessage();
         })
     }
     //function to load the specific information from the api for the pokemon clicked on. 
@@ -59,6 +70,14 @@ let pokemonRepository = (function(){
         .catch(function (e){
             console.error(e);
         });
+    }
+    function showLoadingMessage(text){
+        let warning = document.querySelector('.warning');
+            warning.innerHTML = '<p>'+ text +'</p>'
+    }
+    function hideLoadingMessage(){
+        let hide = document.querySelector('.warning');
+        hide.innerHTML = ''
     }
     //added function to be called when needed in other functions
     function addListener(button, pokemon){
