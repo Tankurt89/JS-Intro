@@ -23,7 +23,7 @@ let pokemonRepository = (function(){
         let listPokemon = document.createElement('ul');
         let button = document.createElement('button');
         //added innerText to display correct information on the button
-        button.innerText = pokemon.name, pokemon, pokemon.height;
+        button.innerText = pokemon.name, pokemon;
         button.classList.add('button-class');
         //add button to list and pokemons to .pokemon-list
         listPokemon.classList.add('list-group-item');
@@ -88,14 +88,15 @@ let pokemonRepository = (function(){
         loadDetails(pokemon);
         }
     function showModal(pokemon){
+        loadDetails(pokemon).then(function(){
         let modalTitle = document.querySelector('.modal-title');
         modalTitle.innerText = pokemon.name;
-        let pokemonImage = document.querySelector('.pokemon-image')
-        pokemonImage.src = pokemon.imageUrl;
+        let imageElement = document.querySelector('.pokemon-image')
+        imageElement.src = pokemon.imageUrl;
         let pokemonHeight = document.querySelector('.pokemon-height');
         pokemonHeight.innerText = 'Height: ' + (pokemon.height/10) + 'M';
         $('#myModal').modal('show')
-    }
+        })}
     // searchInput.addEventListener('input', function(event){
     //     pokemonRepository.filterSearch(searchInput);
     // });
@@ -109,7 +110,7 @@ let pokemonRepository = (function(){
     filteredPokemon.forEach(function (pokemon){
         pokemonRepository.addListItem(pokemon);
     });
-}
+    }
     return{
         add: add,
         getAll:  getAll,
