@@ -1,12 +1,13 @@
 body {
-  margin: 20px;
-  padding: 10px;  
-  background-color: #f9f9f9;
+  /* margin: 20px;
+  padding: 10px;   */
+  /* background-image: url(https://i.redd.it/kq8mzkvpkjy51.png); */
   font-family: Arial, sans-serif;
 }
 
 nav {
-  background-color: #fff;
+  background-color: #888585;
+  margin-bottom: 10px;
 }
 
 .navbar-brand {
@@ -31,7 +32,7 @@ nav {
   border: none;
 }
 .list-group-item:hover {
-  background-color: #f2f2f2;
+  background-color: #fff;
 }
 
 .list-group-item img {
@@ -46,7 +47,7 @@ nav {
 }
 
 .modal-title {
-  font-size: 2rem;
+  font-size: 20pt;
 }
 
 .modal-body {
@@ -56,7 +57,7 @@ nav {
 }
 
 .pokemon-height {
-  font-size: 1.5rem;
+  font-size: 30px;
   margin-top: 20px;
 }
 
@@ -65,3 +66,28 @@ nav {
   max-height: 300px;
   margin-bottom: 20px;
 }
+h3{
+
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #e71a1a, #d47221);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.btn{
+  background-color: #ddd;
+  background-image: -moz-linear-gradient( -90deg, rgba(255, 255, 255, 0.5 ) , rgba(255, 255, 255, 0.0 ) );
+  background-image: -webkit-gradient(linear, 0 top, 0 bottom, from( rgba(255, 255, 255, 0.5 ) ), to( rgba(255, 255, 255, 0.0 ) ) );
+  background-image: -o-linear-gradient( -90deg, rgba(255, 255, 255, 0.5 ) , rgba(255, 255, 255, 0.0 ) ); 
+  padding: 5px 8px;
+  color: #222;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius:7px;
+  text-shadow: 1px 1px 0px white;
+  -moz-box-shadow: 0 1px 3px #333;
+  -webkit-box-shadow: 0 1px 3px #333;
+  box-shadow: 0 1px 3px #333;
+  width: 275px;
+  }
