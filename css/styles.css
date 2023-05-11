@@ -1,60 +1,67 @@
-.button-class{
-    border: 3px black solid;
-    color: white;
-    padding: 8px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
-    margin: 6px -80px;
-    color: rgb(35, 6, 138);
-    cursor: pointer;
-    opacity: 0.6;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+body {
+  margin: 20px;
+  padding: 10px;  
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
 }
-#modal-container {
-    display: none;
-  }
-  
-  #modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999; 
-    overflow: auto; 
-    display: grid;
-    text-align: center;
-  }
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-  }
-  
-  .modal-close {
-    float: right;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  }
-  
-  .modal h1 {
-    margin-top: 50px;
-    float: both;
-  }
-  
-  .modal p {
-    margin-bottom: 0;
-  }
+
+nav {
+  background-color: #fff;
+}
+
+.navbar-brand {
+  font: 2rem;
+}
+
+.pokemon-list {
+  padding: none;
+  list-style-type: none;
+  display: flex; 
+  flex-wrap: wrap;
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: center;
+  justify-content: center;
+}
+
+.list-group-item{
+  display: inline-block;
+  padding: 0;
+  border: none;
+}
+.list-group-item:hover {
+  background-color: #f2f2f2;
+}
+
+.list-group-item img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.modal-content {
+  background-color: #fff;
+}
+
+.modal-title {
+  font-size: 2rem;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-height {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.pokemon-image {
+  max-width: 300px;
+  max-height: 300px;
+  margin-bottom: 20px;
+}
